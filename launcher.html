@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MC 启动器 - Fishing工作室</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .launcher-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .version-card {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .download-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .download-option {
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .download-option .btn {
+            margin-top: 1rem;
+            display: inline-block;
+        }
+        .tutorial {
+            background: #e8f4f8;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+        .tutorial h4 {
+            margin-top: 1rem;
+            color: #2c3e50;
+        }
+        .tutorial ol {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        .tutorial li {
+            margin: 0.5rem 0;
+        }
+        code {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">🎣 Fishing工作室</div>
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="projects.html">项目</a></li>
+            <li><a href="launcher.html">MC启动器</a></li>
+            <li><a href="downloads.html">下载</a></li>
+            <li><a href="index.html#contact">联系</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>MC 网页版启动器</h1>
+        <p>便捷下载 · 快速启动 · 一键配置</p>
+    </header>
+
+    <div class="launcher-container">
+        <!-- MC 1.21.1 -->
+        <div class="version-card">
+            <h3>⛏️ Minecraft 1.21.1</h3>
+            <p>最新版本，支持最新特性和 MOD</p>
+            
+            <div class="download-options">
+                <div class="download-option">
+                    <h4>官方启动器</h4>
+                    <p>推荐新手使用</p>
+                    <a href="https://minecraft.net/zh-hans/download" class="btn" target="_blank">下载</a>
+                </div>
+                
+                <div class="download-option">
+                    <h4>HMCL 启动器</h4>
+                    <p>功能强大，支持 MOD 管理</p>
+                    <a href="https://hmcl.huangyuhui.net/" class="btn" target="_blank">下载</a>
+                </div>
+                
+                <div class="download-option">
+                    <h4>PCL2 启动器</h4>
+                    <p>界面美观，启动快速</p>
+                    <a href="https://afdian.net/a/PCL2" class="btn" target="_blank">下载</a>
+                </div>
+            </div>
+
+            <div class="tutorial">
+                <h4>📥 快速启动教程</h4>
+                <ol>
+                    <li>下载并安装启动器（推荐 HMCL 或 PCL2）</li>
+                    <li>打开启动器，点击"下载游戏"</li>
+                    <li>选择版本 <code>1.21.1</code>，点击下载</li>
+                    <li>下载完成后，点击"启动游戏"</li>
+                    <li>首次启动会安装 Java 运行环境，请耐心等待</li>
+                </ol>
+                
+                <h4>⚙️ 一键配置文件</h4>
+                <p>点击下方按钮，下载预配置文件（自动配置 1.21.1 版本）：</p>
+                <a href="#" class="btn" onclick="downloadConfig(); return false;">下载配置文件</a>
+                
+                <h4>📋 启动命令（高级用户）</h4>
+                <p>如果你使用官方启动器，可以使用以下命令快速启动：</p>
+                <pre>java -jar launcher.jar --version 1.21.1</pre>
+            </div>
+        </div>
+
+        <!-- MOD 推荐 -->
+        <div class="version-card">
+            <h3>🔧 推荐 MOD（1.21.1）</h3>
+            <p>提升游戏体验的必备 MOD</p>
+            
+            <div class="download-options">
+                <div class="download-option">
+                    <h4>Fabric API</h4>
+                    <p>MOD 运行库</p>
+                    <a href="https://www.curseforge.com/minecraft/mc-mods/fabric-api" class="btn" target="_blank">下载</a>
+                </div>
+                
+                <div class="download-option">
+                    <h4>OptiFine</h4>
+                    <p>优化画质和性能</p>
+                    <a href="https://optifine.net/downloads" class="btn" target="_blank">下载</a>
+                </div>
+                
+                <div class="download-option">
+                    <h4>JEI</h4>
+                    <p>物品查询 MOD</p>
+                    <a href="https://www.curseforge.com/minecraft/mc-mods/jei" class="btn" target="_blank">下载</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 服务器连接 -->
+        <div class="version-card">
+            <h3>🌐 服务器一键连接</h3>
+            <p>输入服务器地址，生成一键加入文件</p>
+            
+            <div style="margin-top: 1rem;">
+                <input type="text" id="serverAddress" placeholder="例如：mc.example.com:25565" style="padding: 0.5rem; width: 300px; border: 1px solid #ddd; border-radius: 5px;">
+                <button class="btn" onclick="generateServerFile()" style="margin-left: 1rem;">生成连接文件</button>
+            </div>
+            
+            <div class="tutorial" id="serverResult" style="display: none;">
+                <h4>✅ 服务器文件已生成！</h4>
+                <p>1. 下载下方的 <code>server.dat</code> 文件</p>
+                <p>2. 将文件放入 <code>.minecraft/servers.dat</code></p>
+                <p>3. 重启启动器，服务器将自动出现在列表中</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Fishing工作室. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function downloadConfig() {
+            // 生成 HMCL 配置文件
+            const config = {
+                "version": "1.21.1",
+                "javaPath": "auto",
+                "maxMemory": 4096,
+                "resolution": "1920x1080",
+                "fullscreen": false
+            };
+            
+            const blob = new Blob([JSON.stringify(config, null, 2)], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'hmcl-config.json';
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            alert('配置文件已下载！\n\n使用方法：\n1. 打开 HMCL 启动器\n2. 点击"设置" → "导入配置"\n3. 选择刚下载的 hmcl-config.json 文件');
+        }
+        
+        function generateServerFile() {
+            const address = document.getElementById('serverAddress').value;
+            if (!address) {
+                alert('请输入服务器地址！');
+                return;
+            }
+            
+            // 生成 servers.dat 内容（简化版）
+            const serverData = `[
+  {
+    "name": "我的服务器",
+    "ip": "${address}",
+    "port": 25565
+  }
+]`;
+            
+            const blob = new Blob([serverData], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'servers.json';
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            document.getElementById('serverResult').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
